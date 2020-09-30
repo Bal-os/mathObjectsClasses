@@ -3,7 +3,7 @@ package prog.kiev;
 public class ImbaShape extends Shape {
     private Point[] A;
 
-    private double triangle_area_2 (double x1, double y1, double x2, double y2, double x3, double y3) {
+    private double triangleArea2 (double x1, double y1, double x2, double y2, double x3, double y3) {
         return (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1);
     }
 
@@ -21,7 +21,7 @@ public class ImbaShape extends Shape {
     public double getArea(){
         double area_2 = 0;
         for(int i = 2; i < A.length; i++){
-            area_2 += triangle_area_2(A[0].getX(),A[0].getY(),A[i-1].getX(),A[i-1].getY(),A[i].getX(),A[i].getY());
+            area_2 += triangleArea2(A[0].getX(),A[0].getY(),A[i-1].getX(),A[i-1].getY(),A[i].getX(),A[i].getY());
         }
         return Math.abs(area_2/2);
     }

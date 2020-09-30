@@ -1,9 +1,7 @@
 package prog.kiev;
 
 public abstract class RegPolygon extends Shape {
-    private
-
-    int n;
+    private int n;
     protected Point A;
     protected Point B;
     protected double a;
