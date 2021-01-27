@@ -1,7 +1,7 @@
 package prog.kiev;
 
-import prog.kiev.exeptions.UnrealShapeExeptions;
-import prog.kiev.exeptions.outOfBoardExeption;
+import prog.kiev.exeptions.UnrealShapeExceptions;
+import prog.kiev.exeptions.outOfBoardException;
 
 public class main {
     public static void main(String[] args) {
@@ -11,11 +11,11 @@ public class main {
                     new Hexagon(new Point(0, 0), new Point(0, 2)),
                     new Triangle(new Point(0, 0), new Point(0, 2), new Point(3, 0)));
         }
-        catch (outOfBoardExeption exeption){
+        catch (outOfBoardException exeption){
             System.out.println(exeption.getMessage());
             board = new Board();
         }
-        catch (UnrealShapeExeptions exeption){
+        catch (UnrealShapeExceptions exeption){
             System.out.println(exeption.getMessage());
             board = new Board();
         }

@@ -1,6 +1,6 @@
 package prog.kiev;
 
-import prog.kiev.exeptions.outOfBoardExeption;
+import prog.kiev.exeptions.outOfBoardException;
 
 public class Board {
     private final static int BOARDSIZE = 4;
@@ -10,18 +10,18 @@ public class Board {
         super();
     }
 
-    public Board(Shape ... con)throws outOfBoardExeption{
+    public Board(Shape ... con)throws outOfBoardException {
         super();
-        if(con.length > BOARDSIZE) {throw new outOfBoardExeption("too much shapes");}
+        if(con.length > BOARDSIZE) {throw new outOfBoardException("too much shapes");}
         this.con = con;
     }
 
-    private void checkIndex(int n) throws NegativeArraySizeException, outOfBoardExeption{
+    private void checkIndex(int n) throws NegativeArraySizeException, outOfBoardException {
         if(n < 0) {throw new NegativeArraySizeException();}
-        if(n > BOARDSIZE) {throw new outOfBoardExeption("wrong index");}
+        if(n > BOARDSIZE) {throw new outOfBoardException("wrong index");}
     }
 
-    public void addShape(Shape A) throws outOfBoardExeption{
+    public void addShape(Shape A) throws outOfBoardException {
         boolean flag = false;
         for(int i=0; (i < BOARDSIZE) && !flag; i++){
             if(con[i] == null) {
@@ -29,15 +29,15 @@ public class Board {
                 flag = true;
             }
         }
-        if(!flag) {throw new outOfBoardExeption("bord is full");}
+        if(!flag) {throw new outOfBoardException("bord is full");}
     }
 
-    public void addShape(Shape A, int n) throws NegativeArraySizeException, outOfBoardExeption{
+    public void addShape(Shape A, int n) throws NegativeArraySizeException, outOfBoardException {
         checkIndex(n);
         con[n] = A;
     }
 
-    public void delShape(int n) throws NegativeArraySizeException, outOfBoardExeption{
+    public void delShape(int n) throws NegativeArraySizeException, outOfBoardException {
         checkIndex(n);
         con[n] = null;
     }

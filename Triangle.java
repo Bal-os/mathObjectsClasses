@@ -1,6 +1,6 @@
 package prog.kiev;
 
-import prog.kiev.exeptions.UnrealShapeExeptions;
+import prog.kiev.exeptions.UnrealShapeExceptions;
 
 public class Triangle extends Shape {
     private Point A;
@@ -10,11 +10,11 @@ public class Triangle extends Shape {
     private double b;
     private double c;
 
-    private void CheckTriangle() throws UnrealShapeExeptions {
+    private void CheckTriangle() throws UnrealShapeExceptions {
         if( a + b > c ||
             b + c > a ||
             a + c > b){
-            throw new UnrealShapeExeptions("not euclidean triangle");
+            throw new UnrealShapeExceptions("not euclidean triangle");
         }
     }
 
@@ -55,7 +55,7 @@ public class Triangle extends Shape {
         super();
     }
 
-    public Triangle(Point A,Point B, Point C) throws UnrealShapeExeptions{
+    public Triangle(Point A,Point B, Point C) throws UnrealShapeExceptions {
         super();
         this.A = A;
         this.B = B;
